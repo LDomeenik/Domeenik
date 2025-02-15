@@ -229,3 +229,33 @@ button:active {
     animation: fadeIn 1s ease-out forwards;
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    .header-right {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-left img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    .profile-right {
+        text-align: center;
+    }
+    .info-box {
+        padding: 15px;
+    }
+}
+
