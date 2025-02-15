@@ -229,22 +229,55 @@ button:active {
     animation: fadeIn 1s ease-out forwards;
 }
 
-/* 반응형 스타일: 크기 자동 조절 (가로/세로 정렬 유지) */
 @media screen and (max-width: 768px) {
-    .profile-container {
-        width: 90%; /* 너비를 자동 조절 */
-        max-width: 600px; /* 최대 너비 제한 */
+    /* 헤더 정렬 및 크기 조정 */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
     }
-    .profile-left img {
-        width: 150px; /* 이미지 크기 자동 조절 */
-        height: auto;
+    .header-left h1 {
+        font-size: 1.8rem;
+    }
+    .header-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .header-right a {
-        font-size: 0.9rem; /* 네비게이션 크기 조정 */
-        margin: 0 20px;
+        font-size: 0.9rem;
+        margin: 5px;
     }
+    
+    /* 프로필 섹션 조정 */
+    .profile-container {
+        width: 95%; /* 너비를 자동 조절 */
+        max-width: 600px; /* 최대 너비 제한 */
+        padding: 20px;
+    }
+    .profile-left img {
+        width: 120px; /* 이미지 크기 자동 조절 */
+        height: auto;
+    }
+    .profile-right {
+        font-size: 0.9rem;
+    }
+    
+    /* 자기소개 섹션 조정 */
+    .info-box2 {
+        padding: 30px;
+        text-align: center;
+    }
+    .info-box2 h2 {
+        font-size: 1.5rem;
+    }
+    .info-box2 p {
+        font-size: 1rem;
+    }
+    
+    /* 섹션 스타일 조정 */
     .info-box {
-        padding: 20px; /* 박스 내부 여백 조정 */
+        padding: 20px;
     }
 }
 
