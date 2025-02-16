@@ -255,3 +255,11 @@ button:active {
     color: #F1C40F; /* 호버 시 색상 변경 */
     transform: scale(1.05); /* 호버 시 약간 커지는 효과 */
 }
+
+/* 하단 회색 영역 스타일 */
+.footer {
+    background-color: #efefef;
+    text-align: center;
+    padding: 100px;
+    margin-top: 200px;
+}
