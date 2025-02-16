@@ -40,3 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section);
     });
 });
+
+// 각 섹션을 접었다 펼치는 기능 추가 + 삼각형 방향 변경
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".collapsible .section-header").forEach(header => {
+        header.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector(".toggle-icon");
+
+            // 'active' 클래스를 토글하여 접었다 펼쳤다 함
+            content.classList.toggle("active");
+
+            // 삼각형 방향 변경
+            if (content.classList.contains("active")) {
+                icon.textContent = "▲"; // 펼쳐졌을 때 위 방향
+            } else {
+                icon.textContent = "▼"; // 접혔을 때 아래 방향
+            }
+        });
+
+        // 기본적으로 섹션이 접힌 상태로 설정
+        const content = header.nextElementSibling;
+        content.classList.remove("active"); // active 클래스 제거
+    });
+});
