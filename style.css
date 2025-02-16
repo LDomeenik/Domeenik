@@ -229,55 +229,18 @@ button:active {
     animation: fadeIn 1s ease-out forwards;
 }
 
-@media screen and (max-width: 768px) {
-    /* 헤더 정렬 및 크기 조정 */
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-    .header-left h1 {
-        font-size: 1.8rem;
-    }
-    .header-right {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .header-right a {
-        font-size: 0.9rem;
-        margin: 5px;
-    }
-    
-    /* 프로필 섹션 조정 */
-    .profile-container {
-        width: 95%; /* 너비를 자동 조절 */
-        max-width: 600px; /* 최대 너비 제한 */
-        padding: 20px;
-    }
-    .profile-left img {
-        width: 120px; /* 이미지 크기 자동 조절 */
-        height: auto;
-    }
-    .profile-right {
-        font-size: 0.9rem;
-    }
-    
-    /* 자기소개 섹션 조정 */
-    .info-box2 {
-        padding: 30px;
-        text-align: center;
-    }
-    .info-box2 h2 {
-        font-size: 1.5rem;
-    }
-    .info-box2 p {
-        font-size: 1rem;
-    }
-    
-    /* 섹션 스타일 조정 */
-    .info-box {
-        padding: 20px;
-    }
+/* 섹션 기본 스타일: 기본적으로 접힌 상태 */
+.section-content {
+    display: none;
+    transition: max-height 0.3s ease-out;
 }
 
+/* 'active' 클래스가 추가되면 펼쳐짐 */
+.section-content.active {
+    display: block;
+}
+
+/* 섹션 제목(클릭 가능한 부분) 위에 커서를 올리면 포인터로 변경 */
+.section-header {
+    cursor: pointer;
+}
