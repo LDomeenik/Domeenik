@@ -244,3 +244,14 @@ button:active {
 .section-header {
     cursor: pointer;
 }
+
+/* 섹션 제목 hover 효과 */
+.section-header {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.section-header:hover {
+    color: #F1C40F; /* 호버 시 색상 변경 */
+    transform: scale(1.05); /* 호버 시 약간 커지는 효과 */
+}
