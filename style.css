@@ -1,211 +1,82 @@
 /* 기본 스타일 */
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: white;
-    color: #2C3E50;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* 반응형 크기 설정 */
+    line-height: 1.6; /* 가독성을 위해 줄 간격 추가 */
 }
 
-/* 고정 헤더 스타일 */
+/* 네비게이션 바 */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #1b2a4e;
     color: white;
-    padding: 20px ;
+    padding: 0.8rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 네비게이션 왼쪽 (제목) */
+.header-left {
+    margin-left: 1vw;
+}
+
+/* 화면 크기별 세부 조정 */
+@media (max-width: 1024px) {
+    body {
+        font-size: clamp(0.8rem, 1.1vw, 1rem);
+    }
+    
+    .header-left h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+    }
+    
+    .header-left h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left h1 {
+        font-size: 1.5rem;
+    }
 }
 
 .header-left h1 {
     margin: 0;
     cursor: pointer;
+    font-size: clamp(1.2rem, 2vw, 2.5rem); /* 최소 1.2rem, 최대 2.5rem */
+    transition: font-size 0.3s ease-in-out;
+}
+
+.header-left h1:hover {
+    color: #f1c40f;
+}
+
+/* 네비게이션 오른쪽 (메뉴) */
+.header-right {
+    margin-right: 2vw;
 }
 
 .header-right a {
     color: white;
     text-decoration: none;
-    margin: 0 50px;
+    margin: 0 15px;
     font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.header-right a:hover {
-    color: #F1C40F;
-}
-
-/* 프로필 섹션 배경 적용 (반만) */
-.profile-background {
-    background-color: #4a5c8e; /* 다른 색상 적용 */
-    height: 500px; /* 프로필 섹션의 절반 정도 높이만 적용 */
-    margin-top: 0px; /* 헤더가 고정되면서 상단 여백 추가 */
-}
-
-/* 프로필 섹션 스타일 */
-#profile {
-    background: none; /* 기존 배경 제거 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -300px; /* 배경 위쪽 절반과 자연스럽게 연결 */
-}
-
-.profile-container {
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 80px; /* 프로필 박스 크기 증가 */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* 너비 증가 */
-    align-items: center;
-}
-
-/* 프로필 이미지 */
-.profile-left img {
-    width: 200px; /* 이미지 크기 증가 */
-    height: 250px;
-    border-radius: 50%;
-    margin-right: 120px;
-}
-
-/* 프로필 정보 */
-.profile-right {
-    text-align: left;
-}
-
-.profile-right h2 {
-    margin-bottom: 15px;
-    color: #2C3E50;
-    font-size: 2.0rem; /* 텍스트 크기 증가 */
-}
-
-/* 바디 섹션 스타일 */
-main {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-}
-
-/* 박스 스타일 */
-.info-box2 {
-    background-color: #efefef;
-    height: 600px;
-    margin-top: -130px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.info-box2 h2 {
-    margin-top: 100px; /* 제목을 아래로 이동 */
-}
-
-.info-box2 p {
-    margin-top: 150px; /* 설명을 더 아래로 이동 */
-}
-
-.info-box {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-}
-
-/* 경력사항 스타일 */
-.career-item {
-    border-left: 3px solid #2C3E50;
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.career-item span {
-    font-weight: bold;
-    color: #34495E;
-    font-size: 1.2rem;
-}
-
-.career-item p {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-/* 자격증 스타일 */
-.education-item {
-    border-left: 3px solid #2C3E50;
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.education-item span {
-    font-weight: bold;
-    color: #34495E;
-    font-size: 1.2rem;
-}
-
-.education-item p {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-/* 활동 스타일 */
-.activity-item {
-    border-left: 3px solid #2C3E50;
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.activity-item span {
-    font-weight: bold;
-    color: #34495E;
-    font-size: 1.2rem;
-}
-
-.activity-item p {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-/* skill 스타일 */
-.skills-item {
-    border-left: 3px solid #2C3E50;
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.skills-item span {
-    font-weight: bold;
-    color: #34495E;
-    font-size: 1.2rem;
-}
-
-.skills-item p {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-/* 페이드 인 애니메이션 */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.section-content {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* 네비게이션 호버 효과 */
-.header-right a {
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 .header-right a:hover {
@@ -213,53 +84,219 @@ main {
     transform: scale(1.1);
 }
 
-/* 버튼 클릭 효과 */
-button {
-    transition: transform 0.1s ease-in-out;
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-/* 프로필 박스 등장 애니메이션 */
-.profile-container {
-    opacity: 0;
-    transform: translateY(-150px);
-    animation: fadeIn 1s ease-out forwards;
-}
-
-/* 섹션 기본 스타일: 기본적으로 접힌 상태 */
-.section-content {
+/* 🔹 햄버거 메뉴 버튼 (모바일 전용) */
+.hamburger-menu {
     display: none;
-    transition: max-height 0.3s ease-out;
-}
-
-/* 'active' 클래스가 추가되면 펼쳐짐 */
-.section-content.active {
-    display: block;
-}
-
-/* 섹션 제목(클릭 가능한 부분) 위에 커서를 올리면 포인터로 변경 */
-.section-header {
+    flex-direction: column;
     cursor: pointer;
+    margin-right: 2vw;
 }
 
-/* 섹션 제목 hover 효과 */
-.section-header {
-    cursor: pointer;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+.hamburger-menu .bar {
+    width: 3vh;
+    height: 0.3vh;
+    background-color: white;
+    margin: 0.3vh 0;
+    margin-right: 3.5vh;
 }
 
-.section-header:hover {
-    color: #F1C40F; /* 호버 시 색상 변경 */
-    transform: scale(1.05); /* 호버 시 약간 커지는 효과 */
-}
-
-/* 하단 회색 영역 스타일 */
-.footer {
-    background-color: #efefef;
+/* 🔹 모바일 네비게이션 (기본적으로 숨김) */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: rgba(27, 42, 78, 0.95);
+    width: 60%;
     text-align: center;
-    padding: 100px;
-    margin-top: 200px;
+    padding: 1rem;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 0 0 10px;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+    transition: 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: #F1C40F;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .header-right {
+        display: none; /* 기존 네비게이션 숨김 */
+    }
+
+    .hamburger-menu {
+        display: flex; /* 햄버거 메뉴 보이기 */
+    }
+}
+
+/* 페이지 컨테이너 */
+.page-container {
+    width: 100vw;
+}
+
+/* 개별 페이지 */
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔹 프로필 섹션 */
+.profile-container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 35vw;
+    position: absolute;
+    top: 20vh; /* ⬅ 높이를 조정하여 파란색 배경 위로 2/3 정도 겹치게 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    align-items: center;
+}
+
+/* 🔹 프로필 이미지 */
+.profile-left img {
+    width: 8vw;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 2vw;
+}
+
+/* 🔹 프로필 텍스트 */
+.profile-right h2 {
+    font-size: clamp(1.4rem, 2vw, 2.2rem); /* 화면 크기에 따라 조정 */
+    margin-bottom: 0.5vw;
+}
+
+.profile-right p {
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* 화면 크기에 따라 조정 */
+}
+
+/* 🔹 파란색 배경 박스 */
+.blue-background {
+    background-color: #4a5c8e;
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* 🔹 프로필 섹션 아래 추가 박스 */
+.profile-description {
+    width: 80vw; /* 기본 가로 크기 */
+    max-width: 1800px; /* 최대 크기 */
+    background-color: #ffffff; /* 배경 */
+    padding: 1.5vw;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: calc(20vh + 8vw); /* profile-container 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: clamp(1.5rem, 1.8vw, 1.7rem); /* 반응형 글씨 크기 */
+    margin-top: 25vh;
+}
+
+/* 🔹 반응형 조정 */
+@media (max-width: 1024px) {
+    .profile-description {
+        width: 50vw;
+        padding: 2vw;
+        font-size: clamp(0.8rem, 1vw, 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-description {
+        width: 70vw;
+        padding: 3vw;
+        font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+    }
+}
+
+/* 🔹 페이지 레이아웃 설정 */
+.left-box {
+    width: 20%;
+    height: 100%;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 우측 콘텐츠 */
+.right-content {
+    width: 80%;
+    padding: 3vw;
+}
+
+/* 반응형 조정 */
+@media (max-width: 1024px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        max-width: 60vw;
+        top: 25vh;
+    }
+
+    .profile-left img {
+        width: 12vw;
+    }
+
+     /* 화면이 작아질수록 글씨 크기 축소 */
+     .profile-right h2 {
+        font-size: clamp(1.2rem, 1.8vw, 2rem);
+    }
+
+    .profile-right p {
+        font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 80vw;
+        top: 20vh;
+    }
+
+    .profile-left img {
+        width: 16vw;
+    }
+
+    .profile-right h2 {
+        font-size: clamp(1rem, 1.5vw, 1.8rem);
+    }
+
+    .profile-right p {
+        font-size: clamp(0.6rem, 1.1vw, 0.8rem);
+    }
+
+    .left-box {
+        width: 25%;
+        font-size: 1.5rem;
+    }
+
+    .right-content {
+        width: 75%;
+    }
 }
