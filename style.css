@@ -151,6 +151,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #f6f6f6;
 }
 
 /* 🔹 프로필 섹션 */
@@ -202,7 +203,7 @@ header {
 .profile-description {
     width: 80vw; /* 기본 가로 크기 */
     max-width: 1800px; /* 최대 크기 */
-    background-color: #ffffff; /* 배경 */
+    background-color: #f6f6f6; /* 배경 */
     padding: 1.5vw;
     border-radius: 10px;
     text-align: center;
@@ -234,14 +235,25 @@ header {
 
 /* 🔹 페이지 레이아웃 설정 */
 .left-box {
-    width: 20%;
+    width: 5%;
     height: 100%;
-    background-color: #efefef;
+    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.right-box {
+    width: 5%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
 }
 
 /* 우측 콘텐츠 */
@@ -256,7 +268,7 @@ header {
         flex-direction: column;
         text-align: center;
         max-width: 60vw;
-        top: 35vh;
+        top: 25vh;
     }
 
     .profile-left img {
@@ -292,8 +304,11 @@ header {
     }
 
     .left-box {
-        width: 25%;
-        font-size: 1.5rem;
+        width: 5%;
+    }
+
+    .right-box {
+        width: 5%;
     }
 
     .right-content {
