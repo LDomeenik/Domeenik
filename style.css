@@ -257,9 +257,33 @@ header {
 }
 
 /* 우측 콘텐츠 */
-.right-content {
-    width: 90%;
-    padding: 3vw;
+.right-content span {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(1.5rem, 1.8vw, 1.7rem);
+    margin-bottom: 10rem;
+}
+
+.right-content p {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(1.0rem, 1.3vw, 1.2rem);
+}
+
+@media (max-width: 1024px) {
+    .right-content {
+        font-size: clamp(0.8rem, 1vw, 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .right-content {
+        font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+    }
 }
 
 /* 반응형 조정 */
