@@ -139,11 +139,6 @@ header {
     }
 }
 
-/* 페이지 컨테이너 */
-.page-container {
-    width: 100vw;
-}
-
 /* 개별 페이지 */
 .page {
     width: 100vw;
@@ -151,9 +146,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f6f6f6;
+    background-color: #f8f8f8;
 }
 
+/* 페이지 컨테이너 */
+.page-container {
+    width: 100vw;
+}
+
+/* page1 레이아웃 */
 /* 🔹 프로필 섹션 */
 .profile-container {
     display: flex;
@@ -186,112 +187,6 @@ header {
 
 .profile-right p {
     font-size: clamp(0.8rem, 1.5vw, 1rem); /* 화면 크기에 따라 조정 */
-}
-
-/* 🔹 파란색 배경 박스 */
-.blue-background {
-    background-color: #4a5c8e;
-    width: 100%;
-    height: 30vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-/* 🔹 프로필 섹션 아래 추가 박스 */
-.profile-description {
-    width: 80vw; /* 기본 가로 크기 */
-    max-width: 1800px; /* 최대 크기 */
-    background-color: #f6f6f6; /* 배경 */
-    padding: 1.5vw;
-    border-radius: 10px;
-    text-align: center;
-    position: absolute;
-    top: calc(20vh + 8vw); /* profile-container 바로 아래 */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    font-size: clamp(1.5rem, 1.8vw, 1.7rem); /* 반응형 글씨 크기 */
-    margin-top: 25vh;
-}
-
-/* 🔹 반응형 조정 */
-@media (max-width: 1024px) {
-    .profile-description {
-        width: 50vw;
-        padding: 2vw;
-        font-size: clamp(0.8rem, 1vw, 1rem);
-    }
-}
-
-@media (max-width: 768px) {
-    .profile-description {
-        width: 70vw;
-        padding: 3vw;
-        font-size: clamp(0.7rem, 0.9vw, 0.9rem);
-    }
-}
-
-/* 🔹 페이지 레이아웃 설정 */
-.left-box {
-    width: 5%;
-    height: 100%;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 0;
-}
-
-.right-box {
-    width: 5%;
-    height: 100%;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-}
-
-/* 우측 콘텐츠 */
-.right-content span {
-    width: 100%;
-    display: block;
-    text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: clamp(1.5rem, 1.8vw, 1.7rem);
-    margin-bottom: 10rem;
-}
-
-.right-content p {
-    width: 100%;
-    display: block;
-    text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: clamp(1.0rem, 1.3vw, 1.2rem);
-}
-
-@media (max-width: 1024px) {
-    .right-content span {
-        font-size: clamp(0.8rem, 1vw, 1rem);
-    }
-
-    .right-content p {
-        font-size: clamp(0.5rem, 0.7vw, 0.7rem);
-    }
-}
-
-@media (max-width: 768px) {
-    .right-content {
-        font-size: clamp(0.7rem, 0.9vw, 0.9rem);
-    }
-
-    .right-content p {
-        font-size: clamp(0.5rem, 0.7vw, 0.7rem);
-    }
 }
 
 /* 반응형 조정 */
@@ -334,16 +229,269 @@ header {
     .profile-right p {
         font-size: clamp(0.6rem, 1.1vw, 0.8rem);
     }
+}
 
+/* 🔹 파란색 배경 박스 */
+.blue-background {
+    background-color: #4a5c8e;
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* 🔹 프로필 섹션 아래 추가 박스 */
+.profile-description {
+    width: 80vw; /* 기본 가로 크기 */
+    max-width: 1800px; /* 최대 크기 */
+    background-color: #f8f8f8; /* 배경 */
+    padding: 1.5vw;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: calc(20vh + 8vw); /* profile-container 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: clamp(1.5rem, 1.8vw, 1.7rem); /* 반응형 글씨 크기 */
+    margin-top: 25vh;
+}
+
+/* 🔹 반응형 조정 */
+@media (max-width: 1024px) {
+    .profile-description {
+        width: 50vw;
+        padding: 2vw;
+        font-size: clamp(0.8rem, 1vw, 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-description {
+        width: 70vw;
+        padding: 3vw;
+        font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+    }
+}
+
+/* 🔹 페이지2 레이아웃 설정 */
+.left-box {
+    width: 35%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* ✅ 오른쪽 정렬 유지 */
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+    padding-right: 3vw; /* ✅ 기존보다 여백 감소 */
+}
+
+/* 🔹 페이지 제목 (span) */
+.left-box span {
+    width: auto;
+    text-align: left;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 3.5vw, 3.4rem);
+    margin-bottom: 1.5rem;
+}
+
+/* 🔹 페이지 설명 (p) */
+.left-box p {
+    width: auto; /* ✅ 기존 90%에서 감소 */
+    text-align: left;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 1.3vw, 1.6rem);
+    margin-bottom: 5rem;
+}
+
+/* 🔹 반응형 조정 */
+@media (max-width: 1024px) {
     .left-box {
-        width: 5%;
+        width: 40%;
+        padding-right: 2%;
+    }
+    .left-box span {
+        font-size: clamp(2rem, 3vw, 2.8rem);
+    }
+    .left-box p {
+        font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .left-box {
+        width: 50%;
+        padding-right: 1vw;
+    }
+    .left-box span {
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    }
+    .left-box p {
+        font-size: clamp(0.8rem, 1vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .left-box {
+        width: 40%;
+        padding-right: 1.5vw;
+    }
+    .left-box span {
+        font-size: clamp(1.5rem, 2vw, 2.2rem);
+    }
+    .left-box p {
+        font-size: clamp(0.7rem, 0.9vw, 1rem);
+    }
+}
+
+/* page5 레이아웃 설정 */
+.skill-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.skill-img img {
+    margin-top: 9vh;
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+}
+
+#page5 {
+    position: relative; /* 상대 위치 설정 */
+}
+
+.content4 {
+    display: flex;
+    justify-content: center;  /* 가로 중앙 정렬 */
+    align-items: flex-start;  /* 세로 상단 정렬 */
+    width: 100%;
+    position: absolute;
+    top: 10%;  /* page5의 상단에서 5% 내려오기 */
+}
+
+.content4 span {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1.8vw, 1.7rem);
+    text-align: center;
+    margin-top: 2vw;
+}
+
+/* 🔹 스킬 이미지 (가운데 정렬) */
+.skill-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+    margin-top: 8vh;
+}
+
+/* 🔹 스킬 박스 컨테이너 */
+.skill-container {
+    position: absolute;
+    width: 35vw; /* 6각형 크기에 맞춤 */
+    height: 35vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 🔹 개별 스킬 박스 */
+.skill-box {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.2vw;
+    text-align: center;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 8vw;  /* 박스 크기 */
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 📌 6각형을 기준으로 박스 배치 */
+.box-1 { top: 25%; left: 10%; transform: translate(-50%, -40%); } /* 상단 */
+.box-2 { top: 25%; left: 100%; transform: translate(-80%, -40%); } /* 오른쪽 상단 */
+.box-3 { top: 60%; left: 100%; transform: translate(-20%, -50%); } /* 오른쪽 하단 */
+.box-4 { top: 100%; left: 88%; transform: translate(-50%, -50%); } /* 하단 */
+.box-5 { top: 100%; left: 10%; transform: translate(-50%, -50%); } /* 왼쪽 하단 */
+.box-6 { top: 60%; left: -10%; transform: translate(-50%, -50%); } /* 왼쪽 상단 */
+
+/* 🔹 반응형 조정 */
+@media (max-width: 1024px) {
+    .skill-img img {
+        max-width: 50vw;
     }
 
-    .right-box {
-        width: 5%;
+    .skill-container {
+        width: 50vw;
+        height: 50vw;
     }
 
-    .right-content {
-        width: 75%;
+    .skill-box {
+        width: 9vw;
+        height: 4.5vw;
+        font-size: clamp(0.8rem, 1vw, 1.2rem);
     }
+}
+
+@media (max-width: 768px) {
+    .skill-img img {
+        max-width: 60vw;
+    }
+
+    .skill-container {
+        width: 55vw;
+        height: 55vw;
+    }
+
+    .skill-box {
+        width: 10vw;
+        height: 5vw;
+        font-size: clamp(0.7rem, 0.9vw, 1rem);
+    }
+    /* ✅ 모바일에서도 6각형 형태 유지 */
+    .box-1 { top: 20%; left: 20%; }
+    .box-2 { top: 20%; left: 80%; }
+    .box-3 { top: 60%; left: 80%; }
+    .box-4 { top: 95%; left: 65%; }
+    .box-5 { top: 95%; left: 20%; }
+    .box-6 { top: 60%; left: 5%; }
+}
+
+@media (max-width: 480px) {
+    .skill-img img {
+        max-width: 70vw;
+    }
+
+    .skill-container {
+        width: 65vw;
+        height: 65vw;
+    }
+
+    .skill-box {
+        width: 12vw;
+        height: 6vw;
+    }
+    /* ✅ 모바일에서는 간격을 더 조정 */
+    .box-1 { top: 45%; left: 15%; }
+    .box-2 { top: 45%; left: 90%; }
+    .box-3 { top: 78%; left: 95%; }
+    .box-4 { top: 110%; left: 85%; }
+    .box-5 { top: 110%; left: 15%; }
+    .box-6 { top: 78%; left: 0%; }
 }
