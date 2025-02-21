@@ -109,3 +109,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".page"); // 모든 섹션
+    const navLinks = document.querySelectorAll(".header-right a, .mobile-nav a"); // 네비게이션 링크들
+
+    const observerOptions = {
+        root: null, // 뷰포트 기준
+        rootMargin: "0px",
+        threshold: 0.5 // 50% 이상 보이면 감지
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute("id"); // 현재 보이는 섹션 ID
+            const correspondingLink = document.querySelector(`.header-right a[href="#${id}"], .mobile-nav a[href="#${id}"]`);
+
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.style.color = "white"); // 기본 색상
+                if (correspondingLink) {
+                    correspondingLink.style.color = "#F1C40F"; // 현재 섹션의 네비게이션 버튼을 노란색으로 변경
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+});
