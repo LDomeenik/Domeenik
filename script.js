@@ -136,3 +136,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sections.forEach(section => observer.observe(section));
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let gifImg = document.querySelector(".skill-img img"); // GIF 이미지 선택
+    let gifSrc = gifImg.src; // 원본 GIF 경로 저장
+
+    setTimeout(() => {
+        let parent = gifImg.parentNode;
+        gifImg.remove(); // GIF 요소 제거
+        let staticImg = document.createElement("img");
+        staticImg.src = gifSrc.replace(".gif", ".png"); // GIF의 첫 프레임을 PNG로 교체
+        staticImg.alt = "skill";
+        parent.appendChild(staticImg); // PNG 추가 (GIF 대체)
+    }, 5000); // 5초 후 GIF 제거 후 정지 이미지로 대체
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let gifImg = document.querySelector(".skill-img img"); // GIF 이미지 선택
+    let gifSrc = gifImg.dataset.src; // 원본 GIF 경로 (data-src 속성 사용)
+    let staticImgSrc = gifSrc.replace(".gif", ".png"); // 정지 이미지 (첫 프레임 PNG)
+    let isPlaying = false; // GIF가 실행 중인지 확인하는 변수
+
+    // 스킬 섹션 감지
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isPlaying) {
+                isPlaying = true; // GIF 실행 중 표시
+                playGif();
+            }
+        });
+    }, { threshold: 0.6 }); // 60% 이상 보일 때 감지
+
+    observer.observe(document.querySelector("#page5")); // page5 감지
+
+    function playGif() {
+        let gifImgElement = document.querySelector(".skill-img img");
+        gifImgElement.src = gifSrc; // GIF 실행
+
+        setTimeout(() => {
+            gifImgElement.src = staticImgSrc; // GIF를 PNG로 변경하여 정지
+            isPlaying = false; // 다시 실행 가능하도록 변경
+        }, 5000); // 5초 후 GIF 멈춤
+    }
+});
+
