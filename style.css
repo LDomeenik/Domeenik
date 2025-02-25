@@ -279,7 +279,7 @@ header {
 /* 🔹 페이지2 레이아웃 설정 */
 .left-box {
     width: 35%;
-    height: 100%;
+    min-height: 100vh;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -329,6 +329,7 @@ header {
     .left-box {
         width: 50%;
         padding-right: 1vw;
+        margin-top: 5vh;
     }
     .left-box span {
         font-size: clamp(1.8rem, 2.5vw, 2.5rem);
@@ -342,6 +343,7 @@ header {
     .left-box {
         width: 40%;
         padding-right: 1.5vw;
+        margin-top: 8vh;
     }
     .left-box span {
         font-size: clamp(1.5rem, 2vw, 2.2rem);
@@ -352,146 +354,131 @@ header {
 }
 
 /* page5 레이아웃 설정 */
-.skill-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.skill-img img {
-    margin-top: 9vh;
-    width: 70%;
-    max-width: 100%;
-    height: auto;
-}
-
 #page5 {
-    position: relative; /* 상대 위치 설정 */
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    justify-content: center; /* 섹션 높이 기준 중앙 */
+    height: 100vh;
+    position: relative;
 }
 
+/* 🔹 스킬 섹션 제목 */
 .content4 {
-    display: flex;
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: flex-start;  /* 세로 상단 정렬 */
     width: 100%;
-    position: absolute;
-    top: 10%;  /* page5의 상단에서 5% 내려오기 */
+    text-align: center;
+    margin-bottom: 5vh; /* 🔥 제목과 이미지 간격 조정 */
 }
 
 .content4 span {
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.5rem, 1.8vw, 1.7rem);
-    text-align: center;
-    margin-top: 2vw;
+    font-size: clamp(1.2rem, 1.9vw, 2.5rem);
 }
 
-/* 🔹 스킬 이미지 (가운데 정렬) */
+/* 🔹 스킬 이미지 (정중앙 배치) */
 .skill-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45%;
-    margin-top: 8vh;
+    width: 100%;
+    height: auto;
 }
 
-/* 🔹 스킬 박스 컨테이너 */
-.skill-container {
-    position: absolute;
-    width: 35vw; /* 6각형 크기에 맞춤 */
-    height: 35vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.skill-img img {
+    width: 65%; /* 기본 크기 조정 */
+    max-width: 550px; /* 최대 크기 제한 */
+    height: auto;
 }
 
-/* 🔹 개별 스킬 박스 */
-.skill-box {
+/* 🔹 양 옆 세로 박스 스타일 */
+.side-box {
     position: absolute;
-    background-color: #ffffff;
+    width: 20vw; /* 박스 너비 */
+    height: 70vh; /* 박스 높이 */
+    background-color: rgba(240, 240, 240, 0.9); /* 연한 회색 배경 */
     border-radius: 10px;
-    padding: 1.2vw;
-    text-align: center;
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
-    font-weight: 600;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 8vw;  /* 박스 크기 */
-    height: 4vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-weight: 600;
 }
 
-/* 📌 6각형을 기준으로 박스 배치 */
-.box-1 { top: 25%; left: 10%; transform: translate(-50%, -40%); } /* 상단 */
-.box-2 { top: 25%; left: 100%; transform: translate(-80%, -40%); } /* 오른쪽 상단 */
-.box-3 { top: 60%; left: 100%; transform: translate(-20%, -50%); } /* 오른쪽 하단 */
-.box-4 { top: 100%; left: 88%; transform: translate(-50%, -50%); } /* 하단 */
-.box-5 { top: 100%; left: 10%; transform: translate(-50%, -50%); } /* 왼쪽 하단 */
-.box-6 { top: 60%; left: -10%; transform: translate(-50%, -50%); } /* 왼쪽 상단 */
+/* 🔹 왼쪽 박스 (중앙 기준 왼쪽) */
+.left-side-box {
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+/* 🔹 오른쪽 박스 (중앙 기준 오른쪽) */
+.right-side-box {
+    right: 20%;
+    transform: translateX(50%);
+}
+
 
 /* 🔹 반응형 조정 */
 @media (max-width: 1024px) {
     .skill-img img {
-        max-width: 50vw;
+        width: 60%;
     }
 
-    .skill-container {
-        width: 50vw;
-        height: 50vw;
-    }
-
-    .skill-box {
-        width: 9vw;
-        height: 4.5vw;
-        font-size: clamp(0.8rem, 1vw, 1.2rem);
+    .side-box {
+        width: 10vw;
+        height: 50vh;
     }
 }
 
 @media (max-width: 768px) {
     .skill-img img {
-        max-width: 60vw;
+        width: 70%;
     }
 
-    .skill-container {
-        width: 55vw;
-        height: 55vw;
+    .content4 span {
+        font-size: clamp(1.6rem, 2vw, 2.5rem);
     }
 
-    .skill-box {
-        width: 10vw;
-        height: 5vw;
-        font-size: clamp(0.7rem, 0.9vw, 1rem);
+    .side-box {
+        width: 40vw;
+        height: 15vh;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    /* ✅ 모바일에서도 6각형 형태 유지 */
-    .box-1 { top: 20%; left: 20%; }
-    .box-2 { top: 20%; left: 80%; }
-    .box-3 { top: 60%; left: 80%; }
-    .box-4 { top: 95%; left: 65%; }
-    .box-5 { top: 95%; left: 20%; }
-    .box-6 { top: 60%; left: 5%; }
+
+    .left-side-box {
+        bottom: 15%;
+    }
+
+    .right-side-box {
+        bottom: 5%;
+    }
 }
 
 @media (max-width: 480px) {
     .skill-img img {
-        max-width: 70vw;
+        width: 80%;
     }
 
-    .skill-container {
-        width: 65vw;
-        height: 65vw;
+    .content4 span {
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
     }
 
-    .skill-box {
-        width: 12vw;
-        height: 6vw;
+    .side-box {
+        width: 80vw;
+        height: 12vh;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    /* ✅ 모바일에서는 간격을 더 조정 */
-    .box-1 { top: 45%; left: 15%; }
-    .box-2 { top: 45%; left: 90%; }
-    .box-3 { top: 78%; left: 95%; }
-    .box-4 { top: 110%; left: 85%; }
-    .box-5 { top: 110%; left: 15%; }
-    .box-6 { top: 78%; left: 0%; }
+
+    .left-side-box {
+        bottom: 18%;
+    }
+
+    .right-side-box {
+        bottom: 5%;
+    }
 }
